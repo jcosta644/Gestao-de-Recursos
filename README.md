@@ -1,2 +1,2 @@
-# Sistema-de-Gestao
-[Projeto] Sistema de Gestao
+# Gestao-de-Recursos
+[Projeto] Gestao de Recursos
