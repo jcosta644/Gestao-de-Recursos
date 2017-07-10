@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Principal {
+
     public static void main(String[] args) {
         Scanner scannerString = new Scanner(System.in);
         Scanner scannerInt = new Scanner(System.in);
@@ -81,10 +82,10 @@ public class Principal {
                             statusRecurso[idBuscaRecurso] = "Alocado";
                             System.out.println("");
                         } else {
-                            System.out.println("Alunos nao podem alocar recursos");
+                            System.out.println("Alunos nao podem alocar recursos\n");
                         }
                     } else {
-                        System.out.println("O recurso nao pode ser alocado");
+                        System.out.println("O recurso nao pode ser alocado\n");
                     }
                     break;
                 case 4:
@@ -134,7 +135,7 @@ public class Principal {
                         }
                     } else {
                         System.out
-                                .println("A alocacao do recurso nao pode ser concluida");
+                                .println("A alocacao do recurso nao pode ser concluida\n");
                     }
                     break;
                 case 6:
@@ -147,9 +148,35 @@ public class Principal {
                                         "\nE-mail: " + emailUsuario[idBuscaUsuario] +
                                         "\nHistorico:" +
                                         "\n\tRecursos Alocados:");
+                        for(int i = 0; i < idRecurso; i++) {
+                            if(usuarioAssociado[i] == idBuscaRecurso) {
+                                System.out
+                                        .println("\n\tRecurso: ");
+                                switch (identRecurso[i]) {
+                                    case 0:
+                                        System.out
+                                                .println("Laboratorio ");
+                                        break;
+                                    case 1:
+                                        System.out
+                                                .println("Auditorio ");
+                                        break;
+                                    case 2:
+                                        System.out
+                                                .println("Sala De Aula ");
+                                        break;
+                                    case 3:
+                                        System.out
+                                                .println("Projetor ");
+                                        break;
+                                }
+                                System.out
+                                        .println("ID: " + i);
+                            }
+                        }
                     } else {
                         System.out
-                                .println("Usuario nao pode ser encontrado");
+                                .println("Usuario nao pode ser encontrado\n");
                     }
                     break;
             }
