@@ -37,7 +37,7 @@ public class Principal {
 
         do {
             System.out
-                    .println("Menu:\n1 - Cadastrar Usuario\n2 - Cadastrar Recurso\n3 - Marcar Alocacao de Recurso\n4 - Confirmar Alocacao\n5 - Concluir Alocacao\n6 - Consultar usuario\n0 - Sair\nEscolha uma opcao: ");
+                    .println("Menu:\n1 - Cadastrar Usuario\n2 - Cadastrar Recurso\n3 - Marcar Alocacao de Recurso\n4 - Confirmar Alocacao\n5 - Concluir Alocacao\n6 - Consultar Usuario\n 7 - Consultar Recurso\n0 - Sair\nEscolha uma opcao: ");
             opc = scannerInt.nextInt();
             switch (opc) {
                 case 1:
@@ -177,6 +177,21 @@ public class Principal {
                     } else {
                         System.out
                                 .println("Usuario nao pode ser encontrado\n");
+                    }
+                    break;
+                case 7:
+                    System.out
+                            .println("Digite o ID do recurso que deseja consultar:\n");
+                    idBuscaRecurso = scannerInt.nextInt();
+                    if(idBuscaRecurso < idRecurso) {
+                        System.out
+                                .println("Associado: " +
+                                        "\nNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso]] +
+                                        "\nE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso] +
+                                        "\nID:" + usuarioAssociado[idBuscaRecurso]]);
+                    } else {
+                        System.out
+                                .println("Recurso nao pode ser encontrado\n");
                     }
                     break;
             }
