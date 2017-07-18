@@ -28,7 +28,8 @@ public class Main {
 		int[] usuarioAssociado = new int[quantRecurso];
 		GregorianCalendar[][] dataInicio = new GregorianCalendar[quantRecurso][100];
 		GregorianCalendar[][] dataTermino = new GregorianCalendar[quantRecurso][100];
-		int idLocacao = 0;
+		int idLocacao[] = new int[quantRecurso];
+		int idBuscaLocacao;
 		int[] tipoAtividade = new int[quantRecurso];
 		// 1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio
 		String[][] tituloAtividade = new String[quantRecurso][100];
@@ -55,6 +56,7 @@ public class Main {
 				System.out.println(
 						"Digite a identificacao(0 = Laboratorio, 1 = Auditorio, 2 = Sala de Aula, 3 = Projetor) do recurso:\n");
 				identRecurso[idRecurso] = scannerInt.nextInt();
+				idLocacao[idRecurso] = 0;
 				idRecurso++;
 				break;
 			case 3:
@@ -76,7 +78,7 @@ public class Main {
 						hora = scannerInt.nextInt();
 						System.out.println("Digite os minutos de inicio da alocacao:\n");
 						minuto = scannerInt.nextInt();
-						dataInicio[idBuscaRecurso][idLocacao] = new GregorianCalendar(ano, mes, dia, hora, minuto);
+						dataInicio[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia, hora, minuto);
 						System.out.println("Digite o ano de termino da alocacao:\n");
 						ano = scannerInt.nextInt();
 						System.out.println("Digite o mes de termino da alocacao:\n");
@@ -87,8 +89,8 @@ public class Main {
 						hora = scannerInt.nextInt();
 						System.out.println("Digite os minutos de termino da alocacao:\n");
 						minuto = scannerInt.nextInt();
-						dataTermino[idBuscaRecurso][idLocacao] = new GregorianCalendar(ano, mes, dia, hora, minuto);
-						idLocacao++;
+						dataTermino[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia, hora, minuto);
+						idLocacao[idBuscaRecurso]++;
 						statusRecurso[idBuscaRecurso] = "Alocado";
 						System.out.println("");
 					} else {
@@ -118,20 +120,22 @@ public class Main {
 							&& usuarioAssociado[idBuscaRecurso] != 1) {
 						System.out.println("Apenas professores podem realizar esta atividade:\n");
 					} else {
+						System.out.println("Digite o ID da alocacao para concluir alocacao:\n");
+						idBuscaLocacao = scannerInt.nextInt();
 						System.out.println("Digite o titulo da atividade que sera realizada:\n");
-						tituloAtividade[idBuscaRecurso] = scannerString.nextLine();
+						tituloAtividade[idBuscaRecurso][idBuscaLocacao] = scannerString.nextLine();
 						System.out.println("Digite a descricao da atividade que sera realizada:\n");
-						descrAtividade[idBuscaRecurso] = scannerString.nextLine();
+						descrAtividade[idBuscaRecurso][idBuscaLocacao] = scannerString.nextLine();
 						System.out
 								.println("Digite os materias que serao necessarios para a atividade ser realizada:\n");
-						materialApoio[idBuscaRecurso] = scannerString.nextLine();
+						materialApoio[idBuscaRecurso][idBuscaLocacao] = scannerString.nextLine();
 						int i = 0;
 						do {
 							System.out.println(
 									"Digite o ID do " + (i + 1) + " usuario associado a atividade(-1 para parar):\n");
-							idParticipantes[idBuscaRecurso][i] = scannerInt.nextInt();
+							idParticipantes[idBuscaRecurso][idBuscaLocacao][i] = scannerInt.nextInt();
 							i++;
-						} while (idParticipantes[idBuscaRecurso][i - 1] != -1);
+						} while (idParticipantes[idBuscaRecurso][idBuscaLocacao][i - 1] != -1);
 						statusRecurso[idBuscaRecurso] = "Concluido";
 					}
 				} else {
