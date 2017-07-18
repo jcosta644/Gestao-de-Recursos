@@ -25,10 +25,10 @@ public class Main {
 		int[] identRecurso = new int[quantRecurso];
 		// 0 = Laboratorio, 1 = Auditorio, 2 = Sala de Aula, 3 = Projetor
 		String[] statusRecurso = new String[quantRecurso];
-		int[] usuarioAssociado = new int[quantRecurso];
+		int[][] usuarioAssociado = new int[quantRecurso][100];
 		GregorianCalendar[][] dataInicio = new GregorianCalendar[quantRecurso][100];
 		GregorianCalendar[][] dataTermino = new GregorianCalendar[quantRecurso][100];
-		int idLocacao[] = new int[quantRecurso];
+		int[] idLocacao = new int[quantRecurso];
 		int idBuscaLocacao;
 		int[] tipoAtividade = new int[quantRecurso];
 		// 1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio
@@ -39,7 +39,7 @@ public class Main {
 
 		do {
 			System.out.println(
-					"Menu:\n1 - Cadastrar Usuario\n2 - Cadastrar Recurso\n3 - Marcar Alocacao de Recurso\n4 - Confirmar Alocacao\n5 - Concluir Alocacao\n6 - Consultar Usuario\n 7 - Consultar Recurso\n0 - Sair\nEscolha uma opcao: ");
+					"Menu:\n1 - Cadastrar Usuario\n2 - Cadastrar Recurso\n3 - Marcar Alocacao de Recurso\n4 - Confirmar Alocacao\n5 - Concluir Alocacao\n6 - Consultar Usuario\n7 - Consultar Recurso\n8 - Relatorio Completo\n0 - Sair\nEscolha uma opcao: ");
 			opc = scannerInt.nextInt();
 			switch (opc) {
 			case 1:
@@ -67,7 +67,7 @@ public class Main {
 					System.out.println("Digite o ID do usuario que deseja alocar o recurso:\n");
 					idBuscaUsuario = scannerInt.nextInt();
 					if (idBuscaUsuario != 0) {
-						usuarioAssociado[idBuscaRecurso] = idBuscaUsuario;
+						usuarioAssociado[idBuscaRecurso][idLocacao[idBuscaRecurso]] = idBuscaUsuario;
 						System.out.println("Digite o ano de inicio da alocacao:\n");
 						ano = scannerInt.nextInt();
 						System.out.println("Digite o mes de inicio da alocacao:\n");
@@ -114,10 +114,13 @@ public class Main {
 				idBuscaRecurso = scannerInt.nextInt();
 				if (statusRecurso[idBuscaRecurso].equals("Em andamento")) {
 					System.out.println(
+							"Digite o ID da alocacao:\n");
+					idBuscaLocacao = scannerInt.nextInt();
+					System.out.println(
 							"Digite a atividade(1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio) que sera realizada:\n");
 					tipoAtividade[idBuscaRecurso] = scannerInt.nextInt();
 					if (((tipoAtividade[idBuscaRecurso] == 1) || (tipoAtividade[idBuscaRecurso] == 3))
-							&& usuarioAssociado[idBuscaRecurso] != 1) {
+							&& usuarioAssociado[idBuscaRecurso][idBuscaLocacao] != 1) {
 						System.out.println("Apenas professores podem realizar esta atividade:\n");
 					} else {
 						System.out.println("Digite o ID da alocacao para concluir alocacao:\n");
@@ -149,24 +152,29 @@ public class Main {
 					System.out.println("Nome: " + nomeUsuario[idBuscaUsuario] + "\nE-mail: "
 							+ emailUsuario[idBuscaUsuario] + "\nHistorico:" + "\n\tRecursos Alocados:");
 					for (int i = 0; i < idRecurso; i++) {
-						if (usuarioAssociado[i] == idBuscaUsuario) {
-							System.out.println("\n\tRecurso: ");
-							switch (identRecurso[i]) {
-							case 0:
-								System.out.println("Laboratorio ");
-								break;
-							case 1:
-								System.out.println("Auditorio ");
-								break;
-							case 2:
-								System.out.println("Sala De Aula ");
-								break;
-							case 3:
-								System.out.println("Projetor ");
-								break;
+						for(int j = 0; j < idLocacao[i]; j++) {
+							if (usuarioAssociado[i][j] == idBuscaUsuario) {
+								System.out.println("\n\tRecurso: ");
+								switch (identRecurso[i]) {
+								case 0:
+									System.out.println("Laboratorio ");
+									System.out.println("ID: " + i + "\n");
+									break;
+								case 1:
+									System.out.println("Auditorio ");
+									System.out.println("ID: " + i + "\n");
+									break;
+								case 2:
+									System.out.println("Sala De Aula ");
+									System.out.println("ID: " + i + "\n");
+									break;
+								case 3:
+									System.out.println("Projetor ");
+									System.out.println("ID: " + i + "\n");
+									break;
 							}
-							System.out.println("ID: " + i);
 						}
+					}
 					}
 				} else {
 					System.out.println("Usuario nao pode ser encontrado\n");
@@ -176,12 +184,16 @@ public class Main {
 				System.out.println("Digite o ID do recurso que deseja consultar:\n");
 				idBuscaRecurso = scannerInt.nextInt();
 				if (idBuscaRecurso < idRecurso) {
-					System.out.println("Associado: " + "\nNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso]]
-							+ "\nE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso]] + "\nID:"
-							+ usuarioAssociado[idBuscaRecurso]);
+					for(int i = 0; i < idLocacao[idBuscaRecurso]; i++) {
+						System.out.println("Associado: " + "\nNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso][i]]
+								+ "\nE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso][i]] + "\nID:"
+								+ usuarioAssociado[idBuscaRecurso] + "\n");
+					}
 				} else {
 					System.out.println("Recurso nao pode ser encontrado\n");
 				}
+				break;
+			case 8:
 				break;
 			}
 		} while (opc != 0);
