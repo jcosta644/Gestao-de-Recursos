@@ -35,7 +35,7 @@ public class Main {
 		String[][] tituloAtividade = new String[quantRecurso][100];
 		String[][] descrAtividade = new String[quantRecurso][100];
 		String[][] materialApoio = new String[quantRecurso][100];
-		int[][][] idParticipantes = new int[quantRecurso][100][quantUsuario];
+		int[][][] idParticipantes = new int[quantRecurso][100][100];
 		int[] quantParticipantes = new int[quantRecurso];
 
 		do {
@@ -79,7 +79,8 @@ public class Main {
 						hora = scannerInt.nextInt();
 						System.out.println("Digite os minutos de inicio da alocacao:\n");
 						minuto = scannerInt.nextInt();
-						dataInicio[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia, hora, minuto);
+						dataInicio[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia,
+								hora, minuto);
 						System.out.println("Digite o ano de termino da alocacao:\n");
 						ano = scannerInt.nextInt();
 						System.out.println("Digite o mes de termino da alocacao:\n");
@@ -90,7 +91,8 @@ public class Main {
 						hora = scannerInt.nextInt();
 						System.out.println("Digite os minutos de termino da alocacao:\n");
 						minuto = scannerInt.nextInt();
-						dataTermino[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia, hora, minuto);
+						dataTermino[idBuscaRecurso][idLocacao[idBuscaRecurso]] = new GregorianCalendar(ano, mes, dia,
+								hora, minuto);
 						quantParticipantes[idLocacao[idBuscaRecurso]] = 0;
 						idLocacao[idBuscaRecurso]++;
 						statusRecurso[idBuscaRecurso] = "Alocado";
@@ -115,13 +117,13 @@ public class Main {
 				System.out.println("Digite o ID do recurso para concluir alocacao:\n");
 				idBuscaRecurso = scannerInt.nextInt();
 				if (statusRecurso[idBuscaRecurso].equals("Em andamento")) {
-					System.out.println(
-							"Digite o ID da alocacao:\n");
+					System.out.println("Digite o ID da alocacao:\n");
 					idBuscaLocacao = scannerInt.nextInt();
 					System.out.println(
 							"Digite a atividade(1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio) que sera realizada:\n");
 					tipoAtividade[idBuscaRecurso][idBuscaLocacao] = scannerInt.nextInt();
-					if (((tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 1) || (tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 3))
+					if (((tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 1)
+							|| (tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 3))
 							&& usuarioAssociado[idBuscaRecurso][idBuscaLocacao] != 1) {
 						System.out.println("Apenas professores podem realizar esta atividade:\n");
 					} else {
@@ -155,7 +157,7 @@ public class Main {
 					System.out.println("Nome: " + nomeUsuario[idBuscaUsuario] + "\nE-mail: "
 							+ emailUsuario[idBuscaUsuario] + "\nHistorico:" + "\n\tRecursos Alocados:");
 					for (int i = 0; i < idRecurso; i++) {
-						for(int j = 0; j < idLocacao[i]; j++) {
+						for (int j = 0; j < idLocacao[i]; j++) {
 							if (usuarioAssociado[i][j] == idBuscaUsuario) {
 								System.out.println("\n\tRecurso: ");
 								switch (identRecurso[i]) {
@@ -175,9 +177,20 @@ public class Main {
 									System.out.println("Projetor ");
 									System.out.println("ID: " + i + "\n");
 									break;
+								}
 							}
 						}
 					}
+					System.out.println("Atividades Realizadas:\n");
+					for (int i = 0; i < idRecurso; i++) {
+						for (int j = 0; j < idLocacao[i]; j++) {
+							for (int k = 0; k < quantParticipantes[j]; k++) {
+								if (idBuscaUsuario == idParticipantes[i][j][k]) {
+									System.out.println("\tTitulo: " + tituloAtividade[i][j] + "\n");
+									System.out.println("\t\tDescricao: " + descrAtividade[i][j] + "\n");
+								}
+							}
+						}
 					}
 				} else {
 					System.out.println("Usuario nao pode ser encontrado\n");
@@ -201,14 +214,18 @@ public class Main {
 						System.out.println("Projetor\n");
 						break;
 					}
-					for(int i = 0; i < idLocacao[idBuscaRecurso]; i++) {
-						System.out.println("Associado: " + "\n\tNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso][i]]
-								+ "\n\tE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso][i]] + "\n\tID:"
-								+ usuarioAssociado[idBuscaRecurso] + "\n");
-						System.out.println("Inicio: " + dataInicio[idBuscaRecurso][i] + "\nTermino: " + dataTermino[idBuscaRecurso][i]);
-						System.out.println("Atividade: " + "\n\tTitulo: " + tituloAtividade[idBuscaRecurso][i] + "\n\tDescricao: " + descrAtividade[idBuscaRecurso][i] + "\n\tMaterial: " + materialApoio[idBuscaRecurso][i]);
+					for (int i = 0; i < idLocacao[idBuscaRecurso]; i++) {
+						System.out
+								.println("Associado: " + "\n\tNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso][i]]
+										+ "\n\tE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso][i]] + "\n\tID:"
+										+ usuarioAssociado[idBuscaRecurso] + "\n");
+						System.out.println("Inicio: " + dataInicio[idBuscaRecurso][i] + "\nTermino: "
+								+ dataTermino[idBuscaRecurso][i]);
+						System.out.println("Atividade: " + "\n\tTitulo: " + tituloAtividade[idBuscaRecurso][i]
+								+ "\n\tDescricao: " + descrAtividade[idBuscaRecurso][i] + "\n\tMaterial: "
+								+ materialApoio[idBuscaRecurso][i]);
 						System.out.println("Participantes: ");
-						for(int j = 0; j < quantParticipantes[i]; j++) {
+						for (int j = 0; j < quantParticipantes[i]; j++) {
 							System.out.println("\n\tNome: " + nomeUsuario[idParticipantes[idBuscaRecurso][i][j]]
 									+ "\n\tE-mail: " + emailUsuario[idParticipantes[idBuscaRecurso][i][j]] + "\n");
 						}
@@ -219,24 +236,27 @@ public class Main {
 				}
 				break;
 			case 8:
-				System.out.println("Relatorio Final: " + "\n\tNumero de Usuarios: " + (idUsuario + 1) + "\n\tNumero de Recursos: " + (idRecurso + 1));
-				int contEmProcesso = 0, contAlocado = 0, contEmAndamento = 0, contConcluido = 0, cont1 = 0, cont2 = 0, cont3 = 0;
-				for(int i = 0; i < idRecurso; i++) {
-					if(statusRecurso[i].equals("Em processo de alocacao")) {
+				System.out.println("Relatorio Final: " + "\n\tNumero de Usuarios: " + (idUsuario + 1)
+						+ "\n\tNumero de Recursos: " + (idRecurso + 1));
+				int contEmProcesso = 0, contAlocado = 0, contEmAndamento = 0, contConcluido = 0, cont1 = 0, cont2 = 0,
+						cont3 = 0;
+				for (int i = 0; i < idRecurso; i++) {
+					if (statusRecurso[i].equals("Em processo de alocacao")) {
 						contEmProcesso++;
-					} else if(statusRecurso[i].equals("Alocado")) {
+					} else if (statusRecurso[i].equals("Alocado")) {
 						contAlocado++;
-					} else if(statusRecurso[i].equals("Em andamento")) {
+					} else if (statusRecurso[i].equals("Em andamento")) {
 						contEmAndamento++;
 					} else {
 						contConcluido++;
 					}
 				}
-				System.out.println("\n\tEm processo de alocacao: " + contEmProcesso + "\n\tAlocado: " + contAlocado + "\n\tEm andamento: " + contEmAndamento + "\n\tConcluido: " + contConcluido);
+				System.out.println("\n\tEm processo de alocacao: " + contEmProcesso + "\n\tAlocado: " + contAlocado
+						+ "\n\tEm andamento: " + contEmAndamento + "\n\tConcluido: " + contConcluido);
 				System.out.println("\n\tRecursos alocados: " + (contAlocado + contEmAndamento + contConcluido));
-				for(int i = 0; i < idRecurso; i++) {
-					for(int j = 0; j < idLocacao[i]; j++) {
-						if(tipoAtividade[i][j] == 1) {
+				for (int i = 0; i < idRecurso; i++) {
+					for (int j = 0; j < idLocacao[i]; j++) {
+						if (tipoAtividade[i][j] == 1) {
 							cont1++;
 						} else if (tipoAtividade[i][j] == 2) {
 							cont2++;
@@ -245,7 +265,8 @@ public class Main {
 						}
 					}
 				}
-				System.out.println("Aula Tradicional: " + cont1 + "\nApresentacao: " + cont2 + "\nLaboratorio: " + cont3 + "\n");
+				System.out.println(
+						"Aula Tradicional: " + cont1 + "\nApresentacao: " + cont2 + "\nLaboratorio: " + cont3 + "\n");
 				break;
 			}
 		} while (opc != 0);
