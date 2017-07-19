@@ -205,7 +205,7 @@ public class Main {
 				}
 				break;
 			case 8:
-				System.out.println("Relatorio Final: " + "\n\tNumero de Usuarios: " + (idUsuario + 1) + "n\tNumero de Recursos: " + (idRecurso + 1));
+				System.out.println("Relatorio Final: " + "\n\tNumero de Usuarios: " + (idUsuario + 1) + "\n\tNumero de Recursos: " + (idRecurso + 1));
 				int contEmProcesso = 0, contAlocado = 0, contEmAndamento = 0, contConcluido = 0;
 				for(int i = 0; i < idRecurso; i++) {
 					if(statusRecurso[i].equals("Em processo de alocacao")) {
@@ -219,6 +219,8 @@ public class Main {
 					}
 				}
 				System.out.println("\n\tEm processo de alocacao: " + contEmProcesso + "\n\tAlocado: " + contAlocado + "\n\tEm andamento: " + contEmAndamento + "\n\tConcluido: " + contConcluido);
+				System.out.println("\n\tRecursos alocados: " + (contAlocado + contEmAndamento + contConcluido));
+				
 				break;
 			}
 		} while (opc != 0);
