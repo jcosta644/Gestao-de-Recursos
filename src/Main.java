@@ -187,6 +187,20 @@ public class Main {
 				System.out.println("Digite o ID do recurso que deseja consultar:\n");
 				idBuscaRecurso = scannerInt.nextInt();
 				if (idBuscaRecurso < idRecurso) {
+					switch (idBuscaRecurso) {
+					case 0:
+						System.out.println("Laboratorio\n");
+						break;
+					case 1:
+						System.out.println("Auditorio\n");
+						break;
+					case 2:
+						System.out.println("Sala De Aula\n");
+						break;
+					case 3:
+						System.out.println("Projetor\n");
+						break;
+					}
 					for(int i = 0; i < idLocacao[idBuscaRecurso]; i++) {
 						System.out.println("Associado: " + "\n\tNome: " + nomeUsuario[usuarioAssociado[idBuscaRecurso][i]]
 								+ "\n\tE-mail: " + emailUsuario[usuarioAssociado[idBuscaRecurso][i]] + "\n\tID:"
