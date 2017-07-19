@@ -30,7 +30,7 @@ public class Main {
 		GregorianCalendar[][] dataTermino = new GregorianCalendar[quantRecurso][100];
 		int[] idLocacao = new int[quantRecurso];
 		int idBuscaLocacao;
-		int[] tipoAtividade = new int[quantRecurso];
+		int[][] tipoAtividade = new int[quantRecurso][100];
 		// 1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio
 		String[][] tituloAtividade = new String[quantRecurso][100];
 		String[][] descrAtividade = new String[quantRecurso][100];
@@ -120,8 +120,8 @@ public class Main {
 					idBuscaLocacao = scannerInt.nextInt();
 					System.out.println(
 							"Digite a atividade(1 = Aula Tradicional, 2 = Apresentacao, 3 = Laboratorio) que sera realizada:\n");
-					tipoAtividade[idBuscaRecurso] = scannerInt.nextInt();
-					if (((tipoAtividade[idBuscaRecurso] == 1) || (tipoAtividade[idBuscaRecurso] == 3))
+					tipoAtividade[idBuscaRecurso][idBuscaLocacao] = scannerInt.nextInt();
+					if (((tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 1) || (tipoAtividade[idBuscaRecurso][idBuscaLocacao] == 3))
 							&& usuarioAssociado[idBuscaRecurso][idBuscaLocacao] != 1) {
 						System.out.println("Apenas professores podem realizar esta atividade:\n");
 					} else {
@@ -220,7 +220,7 @@ public class Main {
 				break;
 			case 8:
 				System.out.println("Relatorio Final: " + "\n\tNumero de Usuarios: " + (idUsuario + 1) + "\n\tNumero de Recursos: " + (idRecurso + 1));
-				int contEmProcesso = 0, contAlocado = 0, contEmAndamento = 0, contConcluido = 0;
+				int contEmProcesso = 0, contAlocado = 0, contEmAndamento = 0, contConcluido = 0, cont1 = 0, cont2 = 0, cont3 = 0;
 				for(int i = 0; i < idRecurso; i++) {
 					if(statusRecurso[i].equals("Em processo de alocacao")) {
 						contEmProcesso++;
@@ -234,7 +234,18 @@ public class Main {
 				}
 				System.out.println("\n\tEm processo de alocacao: " + contEmProcesso + "\n\tAlocado: " + contAlocado + "\n\tEm andamento: " + contEmAndamento + "\n\tConcluido: " + contConcluido);
 				System.out.println("\n\tRecursos alocados: " + (contAlocado + contEmAndamento + contConcluido));
-				
+				for(int i = 0; i < idRecurso; i++) {
+					for(int j = 0; j < idLocacao[i]; j++) {
+						if(tipoAtividade[i][j] == 1) {
+							cont1++;
+						} else if (tipoAtividade[i][j] == 2) {
+							cont2++;
+						} else {
+							cont3++;
+						}
+					}
+				}
+				System.out.println("Aula Tradicional: " + cont1 + "\nApresentacao: " + cont2 + "\nLaboratorio: " + cont3 + "\n");
 				break;
 			}
 		} while (opc != 0);
