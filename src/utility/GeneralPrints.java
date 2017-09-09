@@ -3,8 +3,9 @@ package utility;
  * Created by HP on 03/09/2017.
  */
 public class GeneralPrints {
+    GeneralScanners sc = new GeneralScanners();
 
-    public void printMenu() {
+    public int printMenu() {
         System.out.println(
                 "Menu:\n" +
                         "1 - Cadastrar Usuario\n" +
@@ -16,6 +17,7 @@ public class GeneralPrints {
                         "7 - Consultar Recurso\n" +
                         "8 - Relatorio Completo\n" +
                         "0 - Sair\n");
+        return sc.scannerInt.nextInt();
     }
 
     public void printRegisterUser() {

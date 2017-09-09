@@ -7,11 +7,9 @@ public class App {
 
     public static void main(String[] args) {
         GeneralPrints gp = new GeneralPrints();
-        GeneralScanners sc = new GeneralScanners();
         int opc;
         do {
-            gp.printMenu();
-            opc = sc.scannerInt.nextInt();
+            opc = gp.printMenu();
             switch(opc) {
                 case 0:
                     gp.printRegisterUser();
