@@ -7,15 +7,16 @@ public class App {
 
     public static void main(String[] args) {
         GeneralPrints gp = new GeneralPrints();
+        DataBase db = new DataBase();
         int opc;
         do {
             opc = gp.printMenu();
             switch(opc) {
                 case 1:
-                    gp.printRegisterUser();
+                    db.addPerson(gp.printRegisterUser());
                     break;
                 case 2:
-                    System.out.println("EOQ");
+                    db.addResource(gp.printRegisterResource());
                     break;
                 case 3:
                     break;

@@ -1,6 +1,8 @@
 package utility;
 
 import user.*;
+import chain.*;
+import prototype.*;
 /**
  * Created by HP on 03/09/2017.
  */
@@ -24,7 +26,7 @@ public class GeneralPrints {
 
     public Person printRegisterUser() {
         GeneralScanners sc = new GeneralScanners();
-        Person p = null;
+        Person p;
 
         System.out.println("Digite o nome do usuario:\n");
         String name = sc.scannerString.nextLine();
@@ -59,7 +61,20 @@ public class GeneralPrints {
             case 5:
                 p = new Admin(name, email, cpf);
                 break;
+            default:
+                p = null;
         }
+        System.out.println("Cadastro realizado com sucesso!!\n");
         return p;
+    }
+    public Handler printRegisterResource() {
+        System.out.println(
+                "Digite a identificacao do recurso:" +
+                        "0 = Laboratorio\n" +
+                        "1 = Auditorio\n" +
+                        "2 = Sala de Aula\n" +
+                        "3 = Projetor\n");
+        int type = sc.scannerInt.nextInt();
+        return Factory.getHandler(type);
     }
 }

@@ -1,7 +1,13 @@
 package chain;
 
-public class AuditoryHandler implements Handler {
-    private static int nextID = 1;
-    private int id = nextID++;
-    private AuditoryHandler nextInChain;
+public class AuditoryHandler extends Handler {
+
+    public AuditoryHandler(String name) {
+        super(name);
+    }
+
+    @Override
+    public void addChain(Handler next) {
+        super.addChain(next);
+    }
 }
