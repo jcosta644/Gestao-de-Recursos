@@ -19,6 +19,7 @@ public class App {
                     db.addResource(gp.printRegisterResource());
                     break;
                 case 3:
+                    gp.printBookResource(db);
                     break;
                 case 4:
                      break;

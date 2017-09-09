@@ -11,9 +11,12 @@ public abstract class Handler {
     private Person responsible;
     private State state;
 
+    public Handler() {
+    }
+
     public Handler(String name) {
         this.name = name;
-        this.state = new AllocationProcessState();
+        this.state = null;
         this.nextInChain = null;
         this.responsible = null;
     }
@@ -63,6 +66,12 @@ public abstract class Handler {
             nextInChain = next;
         } else {
             nextInChain.addChain(next);
+        }
+    }
+
+    public void handleRequest(int type, Person p) {
+        if (nextInChain != null) {
+            nextInChain.handleRequest(type, p);
         }
     }
 }

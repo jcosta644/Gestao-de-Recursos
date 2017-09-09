@@ -27,12 +27,25 @@ public class DataBase {
         chain.addChain(resource);
     }
 
-    public ArrayList<Person> getPerson() {
+    public ArrayList<Person> getPersonlist() {
         return person;
     }
 
     public ArrayList<Handler> getResource() {
         return resource;
+    }
+
+    public Person getPerson(String cpf) {
+        for(Person p : person) {
+            if(p.getCpf().equals(cpf)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public Handler getChain() {
+        return chain;
     }
 }
 
