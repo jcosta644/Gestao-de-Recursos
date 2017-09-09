@@ -1,4 +1,4 @@
-import utility.GeneralPrints;
+import utility.*;
 
 /**
  * Created by HP on 03/09/2017.
@@ -7,11 +7,11 @@ public class App {
 
     public static void main(String[] args) {
         GeneralPrints gp = new GeneralPrints();
+        GeneralScanners sc = new GeneralScanners();
         int opc;
-
-
         do {
-            opc = gp.printMenu();
+            gp.printMenu();
+            opc = sc.scannerInt.nextInt();
             switch(opc) {
                 case 0:
                     gp.printRegisterUser();
