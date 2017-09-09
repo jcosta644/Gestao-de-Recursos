@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc267474-6624-4907-8dd1-123395b3dceb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/prototype/Factory.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prototype/AuditoryPrototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prototype/ClassRoomPrototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prototype/LaboratoryPrototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prototype/ProjectorPrototype.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/prototype/Resource.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/App.class" afterPath="$PROJECT_DIR$/bin/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/utility/GeneralPrints.class" afterPath="$PROJECT_DIR$/bin/utility/GeneralPrints.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.java" afterPath="$PROJECT_DIR$/src/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chain/AuditoryHandler.java" afterPath="$PROJECT_DIR$/src/chain/AuditoryHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chain/ClassRoomHandler.java" afterPath="$PROJECT_DIR$/src/chain/ClassRoomHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chain/Handler.java" afterPath="$PROJECT_DIR$/src/chain/Handler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chain/LaboratoryHandler.java" afterPath="$PROJECT_DIR$/src/chain/LaboratoryHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/chain/ProjectorHandler.java" afterPath="$PROJECT_DIR$/src/chain/ProjectorHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/DataBase.java" afterPath="$PROJECT_DIR$/src/utility/DataBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utility/GeneralPrints.java" afterPath="$PROJECT_DIR$/src/utility/GeneralPrints.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/state/AllocatedState.java" afterPath="$PROJECT_DIR$/src/state/AllocatedState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/state/AllocationProcessState.java" afterPath="$PROJECT_DIR$/src/state/AllocationProcessState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/state/CompletedState.java" afterPath="$PROJECT_DIR$/src/state/CompletedState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/state/InProgressState.java" afterPath="$PROJECT_DIR$/src/state/InProgressState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/state/State.java" afterPath="$PROJECT_DIR$/src/state/State.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,35 +20,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Factory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prototype/Factory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#736#737#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassRoomHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chain/ClassRoomHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
-              <folding>
-                <element signature="e#105#106#0" expanded="true" />
-                <element signature="e#132#133#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LaboratoryHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chain/LaboratoryHandler.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,16 +35,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectorHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chain/ProjectorHandler.java">
+      <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/state/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="51">
+              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding>
-                <element signature="e#105#106#0" expanded="true" />
-                <element signature="e#132#133#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,11 +50,9 @@
       <file leaf-file-name="AuditoryHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/chain/AuditoryHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="136">
               <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="29" />
               <folding>
-                <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#131#132#0" expanded="true" />
                 <element signature="e#187#188#0" expanded="true" />
                 <element signature="e#223#224#0" expanded="true" />
               </folding>
@@ -105,11 +60,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneralPrints.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utility/GeneralPrints.java">
+      <file leaf-file-name="Handler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/chain/Handler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+            <state relative-caret-position="529">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#613#614#0" expanded="true" />
+                <element signature="method#addChain#0;class#Handler#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassRoomHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/chain/ClassRoomHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
+              <folding>
+                <element signature="e#188#189#0" expanded="true" />
+                <element signature="e#224#225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllocatedState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/state/AllocatedState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="10" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -117,12 +100,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/chain/Handler.java">
+      <file leaf-file-name="AllocationProcessState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/state/AllocationProcessState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompletedState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/state/CompletedState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InProgressState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/state/InProgressState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,30 +139,8 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBase.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/utility/DataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="69" selection-end-column="128" />
+            <state relative-caret-position="340">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -191,8 +178,13 @@
         <option value="$PROJECT_DIR$/src/chain/ClassRoomHandler.java" />
         <option value="$PROJECT_DIR$/src/chain/LaboratoryHandler.java" />
         <option value="$PROJECT_DIR$/src/chain/ProjectorHandler.java" />
-        <option value="$PROJECT_DIR$/src/chain/Handler.java" />
         <option value="$PROJECT_DIR$/src/utility/DataBase.java" />
+        <option value="$PROJECT_DIR$/src/state/State.java" />
+        <option value="$PROJECT_DIR$/src/chain/Handler.java" />
+        <option value="$PROJECT_DIR$/src/state/AllocatedState.java" />
+        <option value="$PROJECT_DIR$/src/state/AllocationProcessState.java" />
+        <option value="$PROJECT_DIR$/src/state/CompletedState.java" />
+        <option value="$PROJECT_DIR$/src/state/InProgressState.java" />
       </list>
     </option>
   </component>
@@ -282,6 +274,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gestao-de-Recursos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gestao-de-Recursos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="state" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -773,12 +783,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1504974557733</updated>
-      <workItem from="1504974601715" duration="7688000" />
+      <workItem from="1504974601715" duration="8861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7688000" />
+    <option name="totallyTimeSpent" value="8861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -869,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utility/GeneralScanners.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/ProjectorPrototype.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -925,24 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utility/GeneralPrints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="52" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -952,53 +936,6 @@
             <element signature="e#736#737#0" expanded="true" />
             <element signature="e#786#787#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chain/AuditoryHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#131#132#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chain/ClassRoomHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#105#106#0" expanded="true" />
-            <element signature="e#132#133#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chain/ProjectorHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="e#105#106#0" expanded="true" />
-            <element signature="e#132#133#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/chain/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,6 +958,130 @@
           <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/GeneralScanners.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utility/GeneralPrints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chain/ProjectorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#105#106#0" expanded="true" />
+            <element signature="e#132#133#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chain/AuditoryHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/AllocatedState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="10" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/AllocationProcessState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/CompletedState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/state/InProgressState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chain/ClassRoomHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/chain/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="method#addChain#0;class#Handler#0" expanded="false" />
           </folding>
         </state>
       </provider>

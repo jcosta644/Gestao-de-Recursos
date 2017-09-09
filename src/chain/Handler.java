@@ -1,6 +1,7 @@
 package chain;
 
 import user.*;
+import state.*;
 
 public abstract class Handler {
     private static int nextID = 1;
@@ -8,9 +9,11 @@ public abstract class Handler {
     private String name;
     private Handler nextInChain;
     private Person responsible;
+    private State state;
 
     public Handler(String name) {
         this.name = name;
+        this.state = new AllocationProcessState();
         this.nextInChain = null;
         this.responsible = null;
     }
@@ -45,6 +48,14 @@ public abstract class Handler {
 
     public void setResponsible(Person responsible) {
         this.responsible = responsible;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
     }
 
     public void addChain(Handler next) {
