@@ -11,25 +11,25 @@ public class App {
         do {
             opc = gp.printMenu();
             switch(opc) {
-                case 0:
+                case 1:
                     gp.printRegisterUser();
                     break;
-                case 1:
+                case 2:
                     System.out.println("EOQ");
                     break;
-                case 2:
-                    break;
                 case 3:
-                     break;
-                case 4:
                     break;
+                case 4:
+                     break;
                 case 5:
                     break;
                 case 6:
                     break;
                 case 7:
                     break;
+                case 8:
+                    break;
             }
-        } while(opc != 8);
+        } while(opc != 0);
     }
 }
