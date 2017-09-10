@@ -94,4 +94,26 @@ public class GeneralPrints {
         int ID = sc.scannerInt.nextInt();
         db.getResource(ID).getState().nextState(db.getResource(ID));
     }
+
+    public void printCompleteBook(DataBase db) {
+        System.out.println("Digite o ID do recurso para concluir alocacao:\n");
+        int ID = sc.scannerInt.nextInt();
+        db.getResource(ID).getState().nextState(db.getResource(ID));
+    }
+
+    public void printSearchUser(DataBase db) {
+        System.out.println("Digite o CPF do usuario que deseja consultar:\n");
+        String cpf = sc.scannerString.nextLine();
+        System.out.println(db.getPerson(cpf).toString());
+    }
+
+    public void printResourceUser(DataBase db) {
+        System.out.println("Digite o ID do recurso que deseja consultar:\n");
+        int ID = sc.scannerInt.nextInt();
+        System.out.println(db.getResource(ID).toString());
+    }
+
+    public void printReport(DataBase db) {
+
+    }
 }

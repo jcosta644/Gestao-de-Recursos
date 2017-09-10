@@ -22,4 +22,9 @@ public class LaboratoryHandler extends Handler{
             super.handleRequest(type, p);
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString("Laboratorio");
+    }
 }

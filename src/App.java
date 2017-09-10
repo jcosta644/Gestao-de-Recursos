@@ -25,12 +25,16 @@ public class App {
                     gp.printConfirmBook(db);
                      break;
                 case 5:
+                    gp.printCompleteBook(db);
                     break;
                 case 6:
+                    gp.printSearchUser(db);
                     break;
                 case 7:
+                    gp.printResourceUser(db);
                     break;
                 case 8:
+                    gp.printReport(db);
                     break;
             }
         } while(opc != 0);

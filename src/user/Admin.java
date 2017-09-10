@@ -7,4 +7,9 @@ public class Admin extends Person {
     public Admin(String name, String email, String cpf) {
         super(name, email, cpf);
     }
+
+    @Override
+    public String toString() {
+        return super.toString("Administrador");
+    }
 }

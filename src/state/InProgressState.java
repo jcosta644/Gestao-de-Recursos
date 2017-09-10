@@ -8,4 +8,9 @@ public class InProgressState implements State {
     public void nextState(Handler h) {
         h.setState(new AllocationProcessState());
     }
+
+    @Override
+    public String toString() {
+        return "Em Andamento";
+    }
 }

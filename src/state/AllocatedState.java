@@ -8,4 +8,9 @@ public class AllocatedState implements State {
     public void nextState(Handler h) {
         h.setState(new CompletedState());
     }
+
+    @Override
+    public String toString() {
+        return "Alocado";
+    }
 }

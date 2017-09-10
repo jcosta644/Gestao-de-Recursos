@@ -8,4 +8,9 @@ public class CompletedState implements State {
     public void nextState(Handler h) {
         h.setState(new InProgressState());
     }
+
+    @Override
+    public String toString() {
+        return "Concluido";
+    }
 }

@@ -7,4 +7,9 @@ public class PhDStudent extends Person {
     public PhDStudent(String name, String email, String cpf) {
         super(name, email, cpf);
     }
+
+    @Override
+    public String toString() {
+        return super.toString("Aluno de Doutorado");
+    }
 }

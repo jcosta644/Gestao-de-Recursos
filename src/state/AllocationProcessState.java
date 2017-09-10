@@ -8,4 +8,9 @@ public class AllocationProcessState implements State {
     public void nextState(Handler h) {
         h.setState(new AllocatedState());
     }
+
+    @Override
+    public String toString() {
+        return "Em Processo de Alocacao";
+    }
 }

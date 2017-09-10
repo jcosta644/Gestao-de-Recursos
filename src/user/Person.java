@@ -37,4 +37,8 @@ public class Person {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    public String toString(String type) {
+        return "Nome: " + this.name + "\nCpf: " + this.cpf + "\nTipo: " + type + "\nE-mail: " + this.email;
+    }
 }

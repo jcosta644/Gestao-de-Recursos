@@ -7,4 +7,9 @@ public class Professor extends Person {
     public Professor(String name, String email, String cpf) {
         super(name, email, cpf);
     }
+
+    @Override
+    public String toString() {
+        return super.toString("Professor");
+    }
 }

@@ -74,4 +74,8 @@ public abstract class Handler {
             nextInChain.handleRequest(type, p);
         }
     }
+
+    public String toString(String type) {
+        return "Nome: " + this.name + "\nID: " + this.ID + "\nTipo: "+ type + "\nResponsavel: " + this.responsible.getName() + "\nEstado: " + this.state.toString();
+    }
 }
