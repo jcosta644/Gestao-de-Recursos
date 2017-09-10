@@ -31,7 +31,7 @@ public class DataBase {
         return person;
     }
 
-    public ArrayList<Handler> getResource() {
+    public ArrayList<Handler> getResourceList() {
         return resource;
     }
 
@@ -39,6 +39,15 @@ public class DataBase {
         for(Person p : person) {
             if(p.getCpf().equals(cpf)) {
                 return p;
+            }
+        }
+        return null;
+    }
+
+    public Handler getResource(int ID) {
+        for(Handler h : resource) {
+            if(h.getId() == ID) {
+                return h;
             }
         }
         return null;

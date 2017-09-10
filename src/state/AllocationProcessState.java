@@ -5,9 +5,7 @@ import user.Person;
 
 public class AllocationProcessState implements State {
     @Override
-    public void nextState(Person p, Handler h) {
-        if(p.equals(h.getResponsible())) {
-            h.setState(new AllocatedState());
-        }
+    public void nextState(Handler h) {
+        h.setState(new AllocatedState());
     }
 }

@@ -5,9 +5,7 @@ import user.Person;
 
 public class AllocatedState implements State {
     @Override
-    public void nextState(Person p, Handler h) {
-        if(p.equals(h.getResponsible())) {
-            h.setState(new CompletedState());
-        }
+    public void nextState(Handler h) {
+        h.setState(new CompletedState());
     }
 }

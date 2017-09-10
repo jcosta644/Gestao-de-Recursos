@@ -22,6 +22,7 @@ public class App {
                     gp.printBookResource(db);
                     break;
                 case 4:
+                    gp.printConfirmBook(db);
                      break;
                 case 5:
                     break;

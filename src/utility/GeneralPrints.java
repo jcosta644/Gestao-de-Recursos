@@ -80,13 +80,18 @@ public class GeneralPrints {
     public void printBookResource(DataBase db) {
         System.out.println("Digite o cpf do usuário");
         String cpf = sc.scannerString.nextLine();
-        System.out.println(
-                "Digite a identificacao do recurso:" +
+        System.out.println("Digite a identificacao do recurso:" +
                         "0 = Laboratorio\n" +
                         "1 = Auditorio\n" +
                         "2 = Sala de Aula\n" +
                         "3 = Projetor\n");
         int type = sc.scannerInt.nextInt();
         db.getChain().handleRequest(type, db.getPerson(cpf));
+    }
+
+    public void printConfirmBook(DataBase db) {
+        System.out.println("Digite o ID do recurso para confirmar alocacao:\n");
+        int ID = sc.scannerInt.nextInt();
+        db.getResource(ID).getState().nextState(db.getResource(ID));
     }
 }

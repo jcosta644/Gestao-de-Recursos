@@ -5,7 +5,7 @@ import state.*;
 
 public abstract class Handler {
     private static int nextID = 1;
-    private int id = nextID++;
+    private int ID = nextID++;
     private String name;
     private Handler nextInChain;
     private Person responsible;
@@ -22,11 +22,11 @@ public abstract class Handler {
     }
 
     public int getId() {
-        return id;
+        return ID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getName() {

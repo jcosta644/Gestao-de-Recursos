@@ -4,5 +4,5 @@ import chain.*;
 import user.*;
 
 public interface State {
-    public void nextState(Person p, Handler h);
+    public void nextState(Handler h);
 }

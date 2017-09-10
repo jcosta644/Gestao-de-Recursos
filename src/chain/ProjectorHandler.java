@@ -12,4 +12,14 @@ public class ProjectorHandler extends Handler {
     public void addChain(Handler next) {
         super.addChain(next);
     }
+
+    @Override
+    public void handleRequest(int type, Person p) {
+        if(type == 3) {
+            super.setState(new AllocationProcessState());
+            super.setResponsible(p);
+        } else {
+            super.handleRequest(type, p);
+        }
+    }
 }
