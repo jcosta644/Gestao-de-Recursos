@@ -1,5 +1,6 @@
 package utility;
 
+import com.sun.deploy.util.ReflectionUtil;
 import user.*;
 import chain.*;
 
@@ -27,7 +28,7 @@ public class DataBase {
         chain.addChain(resource);
     }
 
-    public ArrayList<Person> getPersonlist() {
+    public ArrayList<Person> getPersonList() {
         return person;
     }
 
@@ -55,6 +56,96 @@ public class DataBase {
 
     public Handler getChain() {
         return chain;
+    }
+
+    public int getQuantityProjector() {
+        int n = 0;
+        for(Handler h : resource) {
+            if(h instanceof ProjectorHandler) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityLaboratory() {
+        int n = 0;
+        for(Handler h : resource) {
+            if(h instanceof LaboratoryHandler) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityClassRoom() {
+        int n = 0;
+        for(Handler h : resource) {
+            if(h instanceof ClassRoomHandler) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityAuditory() {
+        int n = 0;
+        for(Handler h : resource) {
+            if(h instanceof AuditoryHandler) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityMasterStudent() {
+        int n = 0;
+        for(Person p : person) {
+            if(p instanceof MasterStudent) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityPhDStudent() {
+        int n = 0;
+        for(Person p : person) {
+            if(p instanceof PhDStudent) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityProfessor() {
+        int n = 0;
+        for(Person p : person) {
+            if(p instanceof Professor) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityResearcher() {
+        int n = 0;
+        for(Person p : person) {
+            if(p instanceof Reseacher) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    public int getQuantityUndergraduateStudent() {
+        int n = 0;
+        for(Person p : person) {
+            if(p instanceof UndergraduateStundent) {
+                n++;
+            }
+        }
+        return n;
     }
 }
 

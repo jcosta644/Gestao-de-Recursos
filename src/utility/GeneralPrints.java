@@ -114,6 +114,18 @@ public class GeneralPrints {
     }
 
     public void printReport(DataBase db) {
-
+        System.out.println(
+                "Relatorio:" +
+                    "\n\tNumero de Usuarios: " + db.getPersonList().size() +
+                        "\n\t\tAluno de Graduacao: " + db.getQuantityUndergraduateStudent() +
+                        "\n\t\tAluno de Mestrado: " + db.getQuantityMasterStudent() +
+                        "\n\t\tAluno de Doutorado: " + db.getQuantityPhDStudent() +
+                        "\n\t\tProfessor:" + db.getQuantityProfessor() +
+                        "\n\t\tPesquisador:" + db.getQuantityResearcher() +
+                    "\n\tNumero de Recursos: " + db.getResourceList().size() +
+                        "\n\t\tAuditorio: " + db.getQuantityAuditory() +
+                        "\n\t\tSala de Aula: " + db.getQuantityClassRoom() +
+                        "\n\t\tLaboratorio: " + db.getQuantityLaboratory() +
+                        "\n\t\tProjetor: " + db.getQuantityProjector());
     }
 }
